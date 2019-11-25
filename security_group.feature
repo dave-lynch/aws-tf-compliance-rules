@@ -7,12 +7,6 @@ Scenario Outline: Well-known insecure protocol exposure on Public Network for in
 
 
   Examples:
-    | ProtocolName | proto | portNumber |
-    | HTTP         | tcp   | 443        |
-    | Telnet       | tcp   | 23         |
-    | SSH          | tcp   | 22         |
-    | MySQL        | tcp   | 3306       |
-    | MSSQL        | tcp   | 1443       |
-    | NetBIOS      | tcp   | 139        |
-    | RDP          | tcp   | 3389       |
+    | ProtocolName | proto | portNumber    |
+    | Any          | tcp   | 0-60000       |
 
