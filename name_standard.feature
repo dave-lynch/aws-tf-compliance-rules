@@ -15,5 +15,6 @@ Feature: Ensure Naming Standard
     | AWS Auto-Scaling Group  | name     |
     | aws_key_pair            | key_name |
     | aws_ecs_cluster         | name     |
-    | aws_vpn_gateway	      | name     | 
+    | aws_vpn_gateway	        | name     | 
+    | aws_security_group      | name     |
 
