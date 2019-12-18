@@ -6,15 +6,15 @@ Scenario Outline: Excessive exposure on Public Network for ingress traffic
     Then it must not have <proto> protocol and port <portNumber> for 0.0.0.0/0
 
   Examples:
-    | ProtocolName | proto | portNumber    |
-    | Any          | tcp   | 0-60000       |
-
+| Proto | portNumber  |
+| tcp     | 0-65535 |
+    
 Scenario Outline: Excessive exposure on Public Network for egress traffic
     Given I have AWS Security Group defined
     When it contains egress
     Then it must not have <proto> protocol and port <portNumber> for 0.0.0.0/0
 
   Examples:
-    | ProtocolName | proto | portNumber    |
-    | Any          | tcp   | 0-60000       |
+| Proto | portNumber  |
+| tcp     | 0-65535 |
 
