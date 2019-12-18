@@ -1,20 +1,6 @@
 Feature: Security Group Compliance Rules
 
-Scenario Outline: Excessive exposure on Public Network for ingress traffic
+Scenario Outline: Only selected ports should be publicly open
     Given I have AWS Security Group defined
     When it contains ingress
-    Then it must not have <proto> protocol and port <portNumber> for 0.0.0.0/0
-
-  Examples:
-    | proto     | portNumber    |
-    | tcp       | 0-65535       |
-    
-Scenario Outline: Excessive exposure on Public Network for egress traffic
-    Given I have AWS Security Group defined
-    When it contains egress
-    Then it must not have <proto> protocol and port <portNumber> for 0.0.0.0/0
-
-  Examples:
-    | proto     | portNumber    |
-    | tcp       | 0-65535       |
-
+    Then it must only have tcp protocol and port 22,443 for 0.0.0.0/0
